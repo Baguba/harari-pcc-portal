@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B2A86"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer gear teeth -->
+  <g fill="#D4A537">
+    <rect x="96" y="4" width="8" height="16" rx="2"/>
+    <rect x="96" y="180" width="8" height="16" rx="2"/>
+    <rect x="4" y="96" width="16" height="8" rx="2"/>
+    <rect x="180" y="96" width="16" height="8" rx="2"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(30 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(60 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(120 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(150 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(210 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(240 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(300 100 100)"/>
+    <rect x="96" y="4" width="8" height="16" rx="2" transform="rotate(330 100 100)"/>
+  </g>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="84" fill="url(#bg)" stroke="#D4A537" stroke-width="2"/>
+  <!-- 8-pointed star -->
+  <path d="M100,24 L105,36 L118,36 L108,45 L113,57 L100,50 L87,57 L92,45 L82,36 L95,36 Z" fill="#D4A537"/>
+  <circle cx="100" cy="42" r="3" fill="#5B2A86"/>
+  <!-- Balance scale -->
+  <rect x="98.5" y="70" width="3" height="22" fill="#FBF3E2"/>
+  <rect x="78" y="68" width="44" height="3" rx="1" fill="#FBF3E2"/>
+  <path d="M76,78 Q80,83 84,78 Z" fill="#B5471A"/>
+  <path d="M116,78 Q120,83 124,78 Z" fill="#B5471A"/>
+  <!-- Sun -->
+  <g transform="translate(100, 108)">
+    <circle r="4" fill="#D4A537"/>
+  </g>
+  <!-- Castle -->
+  <path d="M74,138 L74,132 L78,132 L78,136 L82,136 L82,132 L86,132 L86,136 L90,136 L90,132 L94,132 L94,136 L98,136 L98,132 L102,132 L102,136 L106,136 L106,132 L110,132 L110,136 L114,136 L114,132 L118,132 L118,136 L122,136 L122,132 L126,132 L126,138 Z" fill="#FBF3E2"/>
+  <rect x="74" y="138" width="52" height="10" fill="#FBF3E2"/>
+  <path d="M96,148 L96,141 Q100,136 104,141 L104,148 Z" fill="#1E3A5F"/>
+  <rect x="72" y="148" width="56" height="2" fill="#D4A537"/>
+</svg>
