@@ -248,4 +248,4 @@ export function pickQuestions(count: number = 10): AssessmentQuestion[] {
   return shuffled.slice(0, Math.min(count, ASSESSMENT_QUESTIONS.length))
 }
 
-export const PASS_THRESHOLD = 0.1 // 70% to pass we change this 
+export const PASS_THRESHOLD = 0.7 // 70% to pass we change this 
