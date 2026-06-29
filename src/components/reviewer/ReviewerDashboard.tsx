@@ -160,7 +160,7 @@ export function ReviewerDashboard({
                       <Gavel className="h-4 w-4 text-[#D4A537]" />
                       <span className="text-sm text-[#D4A537] font-semibold uppercase tracking-wider">Reviewer Console</span>
                     </div>
-                    <h1 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
+                    <h1 className="text-2xl md:text-3xl font-bold" style={{ fontWeight: 600 }}>
                       Selam, {user.fullName}
                     </h1>
                     <p className="text-[#FBF3E2]/80 text-sm mt-1">
@@ -481,7 +481,7 @@ function ReviewDetailView({
           <button onClick={onBack} className="text-sm text-muted-foreground hover:text-[#5B2A86] mb-2 flex items-center gap-1">
             <ArrowLeft className="h-3.5 w-3.5" /> Back to queue
           </button>
-          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontWeight: 600 }}>
             {app.businessName}
           </h1>
           <p className="text-sm text-muted-foreground font-mono">{app.referenceNumber}</p>

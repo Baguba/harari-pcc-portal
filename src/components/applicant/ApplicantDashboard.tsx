@@ -216,7 +216,7 @@ export function DashboardHeader({
           <button onClick={onNavigateHome} className="flex items-center gap-3 group">
             <HarariEmblem size={40} />
             <div className="text-left">
-              <p className="font-bold text-[#1E3A5F] leading-tight group-hover:text-[#5B2A86] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="font-bold text-[#1E3A5F] leading-tight group-hover:text-[#5B2A86] transition-colors" style={{ fontWeight: 600 }}>
                 {t('brand.name')}
               </p>
               <p className="text-xs text-muted-foreground leading-tight">
@@ -279,7 +279,7 @@ function ListView({
               <Sparkles className="h-4 w-4 text-[#D4A537]" />
               <span className="text-sm text-[#D4A537] font-semibold uppercase tracking-wider">Selam, {user.fullName.split(' ')[0]}!</span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-2xl md:text-3xl font-bold" style={{ fontWeight: 600 }}>
               Your Professional Competence Certificate applications
             </h1>
             <p className="text-[#FBF3E2]/80 text-sm mt-1">
@@ -506,7 +506,7 @@ function FormView({
           <button onClick={onCancel} className="text-sm text-muted-foreground hover:text-[#5B2A86] mb-2 flex items-center gap-1">
             <ArrowLeft className="h-3.5 w-3.5" /> Back to applications
           </button>
-          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontWeight: 600 }}>
             {application.businessName || 'New Application'}
           </h1>
           <p className="text-sm text-muted-foreground font-mono">{application.referenceNumber}</p>
@@ -1181,7 +1181,7 @@ function DetailView({
           <button onClick={onBack} className="text-sm text-muted-foreground hover:text-[#5B2A86] mb-2 flex items-center gap-1">
             <ArrowLeft className="h-3.5 w-3.5" /> Back to applications
           </button>
-          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]" style={{ fontWeight: 600 }}>
             {application.businessName}
           </h1>
           <p className="text-sm text-muted-foreground font-mono">{application.referenceNumber}</p>

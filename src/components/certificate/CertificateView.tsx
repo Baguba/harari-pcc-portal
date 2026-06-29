@@ -101,7 +101,7 @@ export function CertificateView({ application, qualifications: providedQualifica
               <p className="text-xs text-muted-foreground mb-3">
                 {t('brand.bureau')}
               </p>
-              <h1 className="text-2xl md:text-4xl font-bold text-[#1E3A5F] mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              <h1 className="text-2xl md:text-4xl font-bold text-[#1E3A5F] mb-1" style={{ fontWeight: 600 }}>
                 {t('landing.cert.title')}
               </h1>
               <HarariBorder />
@@ -109,7 +109,7 @@ export function CertificateView({ application, qualifications: providedQualifica
 
             <div className="text-center space-y-3 my-6 md:my-8">
               <p className="text-sm text-muted-foreground">{t('landing.cert.thisCertifies')}</p>
-              <p className="text-2xl md:text-3xl font-bold text-[#5B2A86]" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="text-2xl md:text-3xl font-bold text-[#5B2A86]" style={{ fontWeight: 600 }}>
                 {application.fullName}
               </p>
               <p className="text-sm text-muted-foreground">
@@ -118,7 +118,7 @@ export function CertificateView({ application, qualifications: providedQualifica
               <p className="text-sm text-muted-foreground mt-3">
                 {t('cert.body')}
               </p>
-              <p className="text-xl md:text-2xl font-bold text-[#B5471A]" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="text-xl md:text-2xl font-bold text-[#B5471A]" style={{ fontWeight: 600 }}>
                 &ldquo;{application.businessName}&rdquo;
               </p>
               <p className="text-sm text-muted-foreground">

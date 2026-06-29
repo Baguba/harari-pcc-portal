@@ -181,7 +181,7 @@ export function HarariEmblem({ size = 96, className = '', withWordmark = false }
         <div className="mt-2 text-center">
           <p
             className="font-bold tracking-tight text-[#1E3A5F] leading-tight"
-            style={{ fontFamily: 'var(--font-display)', fontSize: size * 0.18 }}
+            style={{ fontWeight: 600, fontSize: size * 0.18 }}
           >
             Harari PCC Portal
           </p>

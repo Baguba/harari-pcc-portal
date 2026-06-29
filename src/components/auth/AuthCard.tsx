@@ -114,7 +114,7 @@ export function AuthCard({ onAuthenticated }: AuthCardProps) {
           <div className="flex justify-center mb-2">
             <HarariEmblem size={56} />
           </div>
-          <CardTitle className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          <CardTitle className="text-2xl font-bold tracking-tight" style={{ fontWeight: 600 }}>
             {t('brand.name')}
           </CardTitle>
           <CardDescription className="text-[#FBF3E2]/90 mt-1">

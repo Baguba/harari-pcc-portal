@@ -111,7 +111,7 @@ export function AssessmentRunner({ application, onPassed, onBack }: AssessmentRu
       <Card className="border-[#D4A537]/30 fade-in-up">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-2"><HarariStar size={48} /></div>
-          <CardTitle className="flex items-center justify-center gap-2 text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+          <CardTitle className="flex items-center justify-center gap-2 text-[#1E3A5F]" style={{ fontWeight: 600 }}>
             <BookOpen className="h-5 w-5 text-[#5B2A86]" /> {t('assessment.title')}
           </CardTitle>
           <HarariBorder />
@@ -252,14 +252,14 @@ export function AssessmentRunner({ application, onPassed, onBack }: AssessmentRu
               </div>
             )}
           </div>
-          <CardTitle className="text-2xl text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+          <CardTitle className="text-2xl text-[#1E3A5F]" style={{ fontWeight: 600 }}>
             {result.passed ? t('assessment.passed') : t('assessment.failed')}
           </CardTitle>
           <HarariBorder />
         </CardHeader>
         <CardContent className="space-y-5 max-w-xl mx-auto">
           <div className="text-center">
-            <p className="text-5xl font-bold text-[#5B2A86]" style={{ fontFamily: 'var(--font-display)' }}>
+            <p className="text-5xl font-bold text-[#5B2A86]" style={{ fontWeight: 600 }}>
               {result.score}<span className="text-2xl text-muted-foreground">/{result.total}</span>
             </p>
             <p className="text-sm text-muted-foreground mt-1">{percent}% · {t('assessment.passMark')}: 70%</p>
@@ -328,7 +328,7 @@ export function AssessmentRunner({ application, onPassed, onBack }: AssessmentRu
 function InfoBox({ label, value }: { label: string; value: string }) {
   return (
     <div className="text-center p-3 rounded-lg border border-[#D4A537]/30 bg-[#FFFBF0]/40">
-      <p className="text-xl font-bold text-[#5B2A86]" style={{ fontFamily: 'var(--font-display)' }}>{value}</p>
+      <p className="text-xl font-bold text-[#5B2A86]" style={{ fontWeight: 600 }}>{value}</p>
       <p className="text-xs text-muted-foreground">{label}</p>
     </div>
   )

@@ -25,7 +25,7 @@ export const translations = {
     'common.loading': 'Loading Harari PCC Portal',
     'common.signIn': 'Sign In',
     'common.signOut': 'Sign Out',
-    'common.createAccount': 'Create Account',
+    'common.createAccount': 'Register',
     'common.back': 'Back',
     'common.cancel': 'Cancel',
     'common.save': 'Save',
@@ -82,6 +82,18 @@ export const translations = {
     'features.compliance.title': 'Regional Compliance',
     'features.compliance.desc': 'Built specifically for the Harari Region. Aligned with regional trade bureau regulations and federal Ethiopian law.',
 
+    // News Section
+    'news.badge': 'News & Updates',
+    'news.title': 'Latest News',
+    'news.subtitle': 'Stay informed about the latest developments in the Harari PCC Portal and regional governance.',
+    'news.readMore': 'Read Full Story',
+    'news.item1.title': 'President of Harari Region Commits to Digital Transformation',
+    'news.item1.desc': 'The President of the Harari People Regional State reaffirms the region\'s commitment to modernizing government services through digital platforms like the PCC Portal, making it easier for entrepreneurs to obtain their Professional Competence Certificates online.',
+    'news.item1.date': 'June 2026',
+    'news.item2.title': 'Prime Minister and Harari Regional Leaders Discuss Economic Growth',
+    'news.item2.desc': 'The Prime Minister of Ethiopia meets with the President of the Harari Region and senior officials to discuss strategies for accelerating economic development, supporting small businesses, and expanding professional certification programs across the region.',
+    'news.item2.date': 'May 2026',
+
     // CTA
     'cta.title': 'Ready to start your business journey in Harari?',
     'cta.subtitle': 'Create your account today and begin your Professional Competence Certificate application in minutes.',
@@ -96,7 +108,7 @@ export const translations = {
 
     // Auth
     'auth.tab.login': 'Sign In',
-    'auth.tab.register': 'Create Account',
+    'auth.tab.register': 'Register',
     'auth.registerAs': 'I am registering as a:',
     'auth.role.applicant': 'Applicant (Business Owner)',
     'auth.role.reviewer': 'Regional Officer / Reviewer',
@@ -369,6 +381,18 @@ export const translations = {
     'features.verifiable.desc': 'እያንዳንዱ የተሰጠ ማረጋገጫ ልዩ ቁጥር አለው። ደንበኞች እና አጋሮች ትክክለኝነቱን ፍጹም በሆነ ይፋዊ ምርመራ መንገድ ሊያረጋግጡ ይችላሉ።',
     'features.compliance.title': 'የክልል አግባብነት',
     'features.compliance.desc': 'ለሐረሪ ክልል ብቻ የተሰራ። ከክልል የንግድ ቢሮ ደንቦች እና ከፌዴራል የኢትዮጵያ ህግ ጋር ተጣጣሚ።',
+
+    // News Section
+    'news.badge': 'ዜና እና መረጃዎች',
+    'news.title': 'አዳዲስ ዜናዎች',
+    'news.subtitle': 'በሐረሪ ክልል የብቃት ማረጋገጫ ፖርታል እና በክልሉ መንግስት ላይ ያሉ አዳዲስ መረጃዎችን ያግኙ።',
+    'news.readMore': 'ሙሉውን ያንብቡ',
+    'news.item1.title': 'የሐረሪ ክልል ርዕሰ መስተዳድር ለዲጂታል ትራንስፎርሜሽን ቁርጠኝነታቸውን ገለፁ',
+    'news.item1.desc': 'የሐረሪ ህዝብ ክልላዊ መንግስት ርዕሰ መስተዳድር የመንግስት አገልግሎቶችን በዲጂታል መድረኮች እንደ ፒሲሲ ፖርታል ለማዘመን የክልሉን ቁርጠኝነት አረጋግጠዋል፣ ይህም ስራ ፈጣሪዎች የሙያ ብቃት ማረጋገጫቸውን በመስመር ላይ በቀላሉ እንዲያገኙ ያስችላቸዋል።',
+    'news.item1.date': 'ሰኔ 2018',
+    'news.item2.title': 'ጠቅላይ ሚኒስትሩ እና የሐረሪ ክልል አመራሮች በኢኮኖሚ እድገት ላይ ተወያዩ',
+    'news.item2.desc': 'የኢትዮጵያ ጠቅላይ ሚኒስትር ከሐረሪ ክልል ርዕሰ መስተዳድር እና ከከፍተኛ የስራ ሃላፊዎች ጋር በመገናኘት የኢኮኖሚ ልማትን ለማፋጠን፣ አነስተኛ የንግድ ስራዎችን ለመደገፍ እና የሙያ ማረጋገጫ ፕሮግራሞችን በክልሉ ለማስፋፋት ስትራቴጂዎች ላይ ተወያይተዋል።',
+    'news.item2.date': 'ግንቦት 2018',
 
     'cta.title': 'በሐረሪ የንግድ ጉዞዎን ለመጀመር ዝግጁ ነዎት?',
     'cta.subtitle': 'ዛሬ መለያ ይፍጠሩ እና የሙያ ብቃት ማረጋገጫ ማመልከቻዎን በደቂቃዎች ውስጥ ይጀምሩ።',
@@ -646,6 +670,18 @@ export const translations = {
     'features.compliance.title': 'Waliigaltee Godina',
     'features.compliance.desc': 'Godina Hararii qofaf hojjate. Dambii biroo godinaa fi seera mootummaa federaalaa waliin wal mada.',
 
+    // News Section
+    'news.badge': 'Oduu fi Odeeffannoo',
+    'news.title': 'Oduu Haarawaa',
+    'news.subtitle': 'Odeeffannoo haarawaa waa\'ee Pootaala PCC Hararii fi bulchiinsa naannoo argadhaa.',
+    'news.readMore': 'Guutuu Dubbisi',
+    'news.item1.title': 'Pirezidaantiin Naannoo Hararii Ceumsa Dijitaalaaf Kutannoo Qaban Ibsan',
+    'news.item1.desc': 'Pirezidaantiin Mootummaa Naannoo Ummata Hararii, tajaajila mootummaa karaa piilaatfoormii dijitaalaa akka Pootaala PCC hammayyaa gochuuf kutannoo naannichaa irra deebi\'anii mirkaneessan, kunis haaraa hojjettoonni Waraqaa Mirkaneessa Gahumsa Ogummaa isaanii toora intarneetii irraa argachuu akka salphatu taasisa.',
+    'news.item1.date': 'Waxabajjii 2018',
+    'news.item2.title': 'Muummee Ministiraa fi Hoggantoonni Naannoo Hararii Guddina Dinagdee Irratti Mariyatan',
+    'news.item2.desc': 'Muummeen Ministiraa Itoophiyaa, Pirezidaantii Naannoo Hararii fi hoggantoota olaanoo waliin wal argudhaan tarsiimoo guddina dinagdee saffisiisuu, daldala xixinnaa deeggaruu fi sagantaalee mirkaneessa ogummaa naannichatti babal\'isuu irratti mariyatan.',
+    'news.item2.date': 'Caamsaa 2018',
+
     'cta.title': 'Hojii daldalaa Hararii eegaluu keessan qophiifattuu?',
     'cta.subtitle': 'Har\'a herrega uumi, qabiyyee ogummaa mirkaneessituu kadhachuu keessan daqiiqaa keessatti eegi.',
     'cta.apply': 'Kadhachuu keessan eegi',
@@ -922,6 +958,18 @@ export const translations = {
     'features.verifiable.desc': 'የተሰጠ ማረጋገጫ ሁሉ ልዩ ቁጥር አለው። ደንበኛ አጋር ትክክለኝነት ፍጹም ይፋዊ ምርመራ መንገድ ሊያረጋግጡ ይችላሉ።',
     'features.compliance.title': 'የክልል አግባብነት',
     'features.compliance.desc': 'ሐረሪ ክልል ብቻ ለማቀድ። ከክልል የንግድ ቢሮ ደንብ ፌዴራል ኢትዮጵያ ህግ ጋር ተጣጣሚ።',
+
+    // News Section
+    'news.badge': 'ዜና እና መረጃዎች',
+    'news.title': 'አዳዲስ ዜናዎች',
+    'news.subtitle': 'በሐረሪ ክልል የብቃት ማረጋገጫ ፖርታል እና በክልሉ መንግስት ላይ ያሉ አዳዲስ መረጃዎችን ያግኙ።',
+    'news.readMore': 'ሙሉውን ያንብቡ',
+    'news.item1.title': 'President of Harari Region Commits to Digital Transformation',
+    'news.item1.desc': 'The President of the Harari People Regional State reaffirms the region\'s commitment to modernizing government services through digital platforms like the PCC Portal, making it easier for entrepreneurs to obtain their Professional Competence Certificates online.',
+    'news.item1.date': 'June 2026',
+    'news.item2.title': 'Prime Minister and Harari Regional Leaders Discuss Economic Growth',
+    'news.item2.desc': 'The Prime Minister of Ethiopia meets with the President of the Harari Region and senior officials to discuss strategies for accelerating economic development, supporting small businesses, and expanding professional certification programs across the region.',
+    'news.item2.date': 'May 2026',
 
     'cta.title': 'ሐረሪ የንግድ ጉዞ ጀምር ዝግጁ ነህ?',
     'cta.subtitle': 'ዛሬ መለያ ፍጠር መሐረሪ ብቃት ማረጋገጫ ማመልከቻ በደቂቃ ጀምር።',

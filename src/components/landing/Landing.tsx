@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { HarariStar, HarariBorder, HarariGeoPattern } from '@/components/harari/Decorations'
@@ -8,7 +9,8 @@ import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher'
 import { useLanguage } from '@/lib/LanguageContext'
 import {
   FileText, ShieldCheck, Building2, Clock, CheckCircle2, MapPin,
-  Award, ArrowRight, BookOpen, Users, Bell, Lock
+  Award, ArrowRight, BookOpen, Users, Bell, Lock, Newspaper,
+  ChevronLeft, ChevronRight, Info
 } from 'lucide-react'
 
 interface LandingProps {
@@ -34,6 +36,41 @@ export function Landing({ onApply, onLogin }: LandingProps) {
     { title: t('features.compliance.title'), desc: t('features.compliance.desc'), icon: Building2 },
   ]
 
+  // ── News carousel data (add more items here to update the slideshow) ──
+  const NEWS_ITEMS = [
+    {
+      image: '/news-1.jpg',
+      title: t('news.item1.title'),
+      description: t('news.item1.desc'),
+      date: t('news.item1.date'),
+    },
+    {
+      image: '/news-2.jpg',
+      title: t('news.item2.title'),
+      description: t('news.item2.desc'),
+      date: t('news.item2.date'),
+    },
+  ]
+
+  // ── Carousel state ──
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const totalSlides = NEWS_ITEMS.length
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides)
+  }, [totalSlides])
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }, [totalSlides])
+
+  // Auto-advance every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 6000)
+    return () => clearInterval(timer)
+  }, [nextSlide])
+
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader onLogin={onLogin} />
@@ -52,7 +89,7 @@ export function Landing({ onApply, onLogin }: LandingProps) {
                 </div>
                 <h1
                   className="text-4xl md:text-6xl font-bold tracking-tight leading-tight"
-                  style={{ fontFamily: 'var(--font-display)' }}
+                  style={{ fontWeight: 600 }}
                 >
                   {t('landing.hero.title').split(t('landing.hero.title.highlight'))[0]}
                   <span className="text-[#D4A537]">{t('landing.hero.title.highlight')}</span>
@@ -80,15 +117,15 @@ export function Landing({ onApply, onLogin }: LandingProps) {
                 </div>
                 <div className="flex flex-wrap gap-6 pt-6 text-sm">
                   <div>
-                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontFamily: 'var(--font-display)' }}>5</div>
+                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontWeight: 600 }}>5</div>
                     <div className="text-[#FBF3E2]/80">{t('landing.hero.stat.days')}</div>
                   </div>
                   <div className="border-l border-white/20 pl-6">
-                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontFamily: 'var(--font-display)' }}>100%</div>
+                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontWeight: 600 }}>100%</div>
                     <div className="text-[#FBF3E2]/80">{t('landing.hero.stat.online')}</div>
                   </div>
                   <div className="border-l border-white/20 pl-6">
-                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontFamily: 'var(--font-display)' }}>2 Yrs</div>
+                    <div className="text-3xl font-bold text-[#D4A537]" style={{ fontWeight: 600 }}>2 Yrs</div>
                     <div className="text-[#FBF3E2]/80">{t('landing.hero.stat.validity')}</div>
                   </div>
                 </div>
@@ -100,14 +137,14 @@ export function Landing({ onApply, onLogin }: LandingProps) {
         </section>
 
         {/* Process Section */}
-        <section className="py-16 md:py-24 bg-[#FBF3E2]">
+        <section id="how-it-works" className="py-16 md:py-24 bg-[#FBF3E2] scroll-mt-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#5B2A86]/10 px-4 py-1 text-sm text-[#5B2A86] mb-3">
                 <BookOpen className="h-3.5 w-3.5" />
                 <span>{t('how.title')}</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1E3A5F]" style={{ fontWeight: 600 }}>
                 {t('how.heading')}
               </h2>
               <p className="text-muted-foreground">
@@ -123,7 +160,7 @@ export function Landing({ onApply, onLogin }: LandingProps) {
                       <div className={`h-12 w-12 rounded-xl flex items-center justify-center ${step.bg}`}>
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
-                      <span className="text-5xl font-bold text-[#D4A537]/20" style={{ fontFamily: 'var(--font-display)' }}>
+                      <span className="text-5xl font-bold text-[#D4A537]/20" style={{ fontWeight: 600 }}>
                         {i + 1}
                       </span>
                     </div>
@@ -136,15 +173,114 @@ export function Landing({ onApply, onLogin }: LandingProps) {
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-16 md:py-24 bg-white">
+        {/* ═══ News & Updates Slideshow (Atmospheric) ═══ */}
+        <section id="news" className="relative bg-[#0B1221] text-white scroll-mt-16 overflow-hidden">
+          {/* Subtle atmospheric background pattern/glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1E3A5F]/20 via-[#0B1221] to-[#0B1221] opacity-60" />
+          
+          <div className="relative pt-12 md:pt-20">
+            <div className="container mx-auto px-4 relative z-10">
+              {/* Section header */}
+              <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-sm text-[#D4A537] mb-4 border border-white/10 shadow-lg">
+                  <Newspaper className="h-4 w-4" />
+                  <span className="font-medium tracking-wide uppercase">{t('news.badge')}</span>
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white tracking-tight" style={{ fontWeight: 600 }}>
+                  {t('news.title')}
+                </h2>
+                <p className="text-white/70 text-lg">
+                  {t('news.subtitle')}
+                </p>
+              </div>
+            </div>
+
+            {/* Slideshow (Edge-to-Edge) */}
+            <div className="relative w-full">
+              {/* Carousel container */}
+              <div className="relative overflow-hidden bg-[#0B1221] h-[400px] md:h-[550px]">
+                <div
+                  className="flex transition-transform duration-1000 ease-in-out h-full"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {NEWS_ITEMS.map((item, i) => (
+                    <div key={i} className="w-full h-full flex-shrink-0 relative group">
+                      {/* Background Image */}
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
+                      />
+                      {/* Atmospheric gradients to blend edges seamlessly */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-[#0B1221] opacity-90" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1221] via-[#0B1221]/60 to-transparent" />
+                      
+                      {/* Overlaid Content Container (Aligned with container) */}
+                      <div className="absolute inset-0 flex flex-col justify-center">
+                        <div className="container mx-auto px-4">
+                          <div className="max-w-2xl flex flex-col items-start">
+                            <div className="inline-flex items-center gap-2 text-sm text-[#D4A537] font-bold mb-4 tracking-widest uppercase">
+                              <Newspaper className="h-4 w-4" />
+                              {item.date}
+                            </div>
+                            <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontWeight: 600 }}>
+                              {item.title}
+                            </h3>
+                            <p className="text-sm md:text-lg text-white/80 leading-relaxed line-clamp-3 mb-4 max-w-xl">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Previous / Next buttons */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/5 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all z-10"
+                  aria-label="Previous news"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/5 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all z-10"
+                  aria-label="Next news"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
+
+              {/* Dot indicators positioned over the bottom blend */}
+              <div className="absolute bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-3">
+                {NEWS_ITEMS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentSlide(i)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      i === currentSlide
+                        ? 'w-10 bg-[#D4A537]'
+                        : 'w-2.5 bg-white/30 hover:bg-white/60'
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features / About */}
+        <section id="about" className="py-16 md:py-24 bg-[#FBF3E2] scroll-mt-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#B5471A]/10 px-4 py-1 text-sm text-[#B5471A] mb-3">
                 <Award className="h-3.5 w-3.5" />
                 <span>{t('features.badge')}</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1E3A5F]" style={{ fontFamily: 'var(--font-display)' }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1E3A5F]" style={{ fontWeight: 600 }}>
                 {t('features.title')}
               </h2>
               <p className="text-muted-foreground">
@@ -174,7 +310,7 @@ export function Landing({ onApply, onLogin }: LandingProps) {
             <div className="flex justify-center mb-4">
               <HarariStar size={56} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 max-w-2xl mx-auto" style={{ fontWeight: 600 }}>
               {t('cta.title')}
             </h2>
             <p className="text-[#FBF3E2]/80 max-w-xl mx-auto mb-8">
@@ -199,19 +335,49 @@ export function Landing({ onApply, onLogin }: LandingProps) {
 
 function SiteHeader({ onLogin }: { onLogin: () => void }) {
   const { t } = useLanguage()
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-[#D4A537]/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <div className="flex items-center gap-3">
             <HarariEmblem size={40} />
             <div>
-              <p className="font-bold text-[#1E3A5F] leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="font-bold text-[#1E3A5F] leading-tight" style={{ fontWeight: 600 }}>
                 {t('brand.name')}
               </p>
               <p className="text-xs text-muted-foreground leading-tight">{t('brand.subtitle')}</p>
             </div>
           </div>
+
+          {/* Navigation links */}
+          <nav className="hidden md:flex items-center gap-1">
+            <button
+              onClick={() => scrollTo('how-it-works')}
+              className="px-4 py-2 text-sm font-medium text-[#1E3A5F] rounded-lg hover:bg-[#5B2A86]/10 hover:text-[#5B2A86] transition-colors"
+            >
+              How it Works
+            </button>
+            <button
+              onClick={() => scrollTo('news')}
+              className="px-4 py-2 text-sm font-medium text-[#1E3A5F] rounded-lg hover:bg-[#2E7A5A]/10 hover:text-[#2E7A5A] transition-colors"
+            >
+              News
+            </button>
+            <button
+              onClick={() => scrollTo('about')}
+              className="px-4 py-2 text-sm font-medium text-[#1E3A5F] rounded-lg hover:bg-[#B5471A]/10 hover:text-[#B5471A] transition-colors"
+            >
+              About
+            </button>
+          </nav>
+
+          {/* Right actions */}
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Button onClick={onLogin} className="bg-[#5B2A86] hover:bg-[#4A1F6E]">
@@ -233,7 +399,7 @@ function SiteFooter() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <HarariEmblem size={32} />
-              <p className="font-bold text-white text-lg" style={{ fontFamily: 'var(--font-display)' }}>{t('brand.name')}</p>
+              <p className="font-bold text-white text-lg" style={{ fontWeight: 600 }}>{t('brand.name')}</p>
             </div>
             <p className="text-sm">
               {t('footer.description')}

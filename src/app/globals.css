@@ -6,9 +6,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --font-display: var(--font-inter);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -130,7 +130,15 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 400;
   font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Inter SemiBold (600) for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 600;
 }
 
 /* Harari geometric pattern background — inspired by Harar Jugol's colorful walls */
